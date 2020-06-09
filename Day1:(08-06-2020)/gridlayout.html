@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grid layout</title>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <style>
+    .container {
+    width: 75%;
+    margin: 50px auto 0;
+    display: table;
+    box-sizing: border-box;
+}
+
+.row {
+    margin: 20px 20px;
+    display:table-row;
+    padding: 20px;
+    border:20px;
+}
+
+.column {
+    display: table-cell;
+    width: 250px;
+    height: 170px;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+.space{display: table-cell;padding:4px;padding-top:0px}
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script>
+      const inelement =React.createElement("div", { className:"column"},null);
+
+      const element =React.createElement("div", { className:"space"},inelement);
+
+      const divElement = React.createElement("div",{ className: "row" },element,element,element,element);
+
+      const rootElement =React.createElement("div",{className:"container"},divElement,divElement,divElement);
+
+      ReactDOM.render(rootElement, document.getElementById("app"));
+
+    </script>
+  </body>
+</html>
